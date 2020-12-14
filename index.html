@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andy Duong</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation Side-Bar -->
+    <nav id="mySidenav" class="sidenav">
+        <button id="closebtn">&#10006;</button>
+        <a href="#about_me" class="nav_link">About Me</a>
+        <a href="#projects" class="nav_link">Projects and Coursework</a>
+        <a href="#contact" class="nav_link">Contact</a>
+    </nav>
+
+    <input type="image" src="assets/open_nav.png" id="open_nav" width=35
+        style="margin: 10px; position: fixed; z-index: 1;" alt="button to open navigation bar" />
+
+
+    <!-- Top Introduction -->
+    <section id="about_me">
+        <h2>Welcome to Andy Duong's Personal Website</h2>
+        <img src="assets/my_pic.png" alt="picture of Andy Duong">
+        <p id="intro">I am currently a Computer Science student at CSU Fullerton expecting to graduate in May 2022. I
+            enjoy
+            learning about how to better use knowledge gained in my classes to create different full-stack projects that
+            make
+            life more convenient or entertaining. </p>
+    </section>
+
+    <!-- Projects and Coursework -->
+    <section id="projects">
+        <h2 style="text-align: center;">Projects and Coursework</h2>
+        <article>
+            <h3>SpaceVentureZ</h3>
+            <img src="assets/SpaceVentureZ.png" alt="picture of SpaceVentureZ, a game I worked on" /><br>
+            <p>
+                SpaceVentureZ is a “shoot-em-up” style arcade game that will take players on a laser blastin' journey
+                through our solar system to defeat vicious alien invaders.
+                Featuring a classic top-down view as well as a robust weapon upgrade system, players will experience a
+                retro, two-dimensional simulation with a modern twist!
+                <br><br>
+                This project was created for my Software Engineering class. Working in a group with 4 other peers over
+                the course of an entire semester, we had the responsibility
+                of designing and delivering a product which was broken into 5 iterations. Each iteration included
+                planning, work distribution, design, development, and testing.
+            </p><br>
+        </article>
+
+        <article>
+            <h3>Post Covid System</h3>
+            <img src="assets/postcovid.png"" alt=" image of the rsvp page" /><br>
+            <p>
+                This project is a system that is meant to be a solution to the issues that Covid-19 brought to
+                restaurants. It provides restaurants with a way to set up waitlists, take orders from customers, and
+                also provides a way for customers to leave reviews about the restaurant and their services.
+                <br><br>
+                This project is web-based and was built with node.js.
+            </p>
+        </article>
+    </section>
+
+    <!-- Contact Info -->
+    <section id="contact">
+        <h2 style="text-align: center;">Contact</h2>
+        <!-- https://www.flaticon.com/authors/pixel-perfect -->
+        <a href="https://github.com/du0ng4" target="_blank"><img src="assets/github.svg" class="contact_img"
+                alt="github logo" /></a>
+        <!-- https://www.flaticon.com/authors/google -->
+        <a href="https://www.linkedin.com/in/andy-duong-cs/" target="_blank"><img src="assets/linkedin-logo.svg"
+                class="contact_img" alt="linkedin logo" /></a>
+        <!-- https://www.flaticon.com/authors/freepik -->
+        <a href="mailto:aduong.cs@gmail.com" target="_blank"><img src="assets/email.svg" class="contact_img"
+                alt="mail icon" /></a>
+    </section>
+
+    <p id="credit">Created by Andy Duong</p>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.display = "block";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.display = "none";
+        }
+
+        let open = document.getElementById("open_nav");
+        let close = document.getElementById("closebtn");
+
+
+        open.addEventListener("click", openNav);
+        close.addEventListener("click", closeNav);
+
+        // closes navigation bar after tapping a link if on mobile
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            let link_clicked = document.getElementsByClassName("nav_link");
+            for (var i = 0; i < link_clicked.length; i++) {
+                link_clicked[i].addEventListener("click", closeNav);
+            }
+        }
+
+    </script>
+</body>
+
+
+</html>
